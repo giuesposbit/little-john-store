@@ -6,4 +6,5 @@ RUN go build
 
 FROM alpine:latest AS production
 COPY --from=builder /app .
+EXPOSE 8080
 CMD ["./little-john-store"]

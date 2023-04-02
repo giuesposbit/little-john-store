@@ -13,6 +13,12 @@ $ go test
 
 Prerequisite, Go-lang binary
 
+To run with Docker
+
+```sh
+$ docker build -t little-john-store .
+```
+
 To call the server
 
 ```sh

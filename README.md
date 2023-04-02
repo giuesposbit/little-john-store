@@ -17,6 +17,7 @@ To run with Docker
 
 ```sh
 $ docker build -t little-john-store .
+$ docker run -d -p 8080:8080 little-john-store
 ```
 
 To call the server

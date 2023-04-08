@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/base64"
 	"encoding/json"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -26,7 +26,7 @@ func TestTickersUnauthorized(t *testing.T) {
     w := httptest.NewRecorder()
     r.ServeHTTP(w, req)
 
-    responseData, _ := ioutil.ReadAll(w.Body)
+    responseData, _ := io.ReadAll(w.Body)
     assert.Equal(t, mockResponse, string(responseData))
     assert.Equal(t, http.StatusUnauthorized, w.Code)
 }

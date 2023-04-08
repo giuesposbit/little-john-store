@@ -58,7 +58,7 @@ func main(){
 	router := gin.Default()
 	router.GET("/tickers", getTickers)
 	router.GET("/tickers/:ticker/history", getTickerHistory)
-    router.Run("localhost:8080")
+    router.Run(":8080")
 }
 
 func getTickers(c *gin.Context) {

@@ -42,7 +42,7 @@ func TestTickers(t *testing.T) {
 
    	// Convert the JSON response to a map
    	var response []user_ticker_value
-   	err := json.Unmarshal([]byte(w.Body.String()), &response)
+   	err := json.Unmarshal(w.Body.Bytes(), &response)
    	// Grab the value & whether or not it exists
 
 	assert.NotEmpty(t,response)
@@ -74,7 +74,7 @@ func TestTickerHistory(t *testing.T) {
 
 	// Convert the JSON response to a map
 	var response []ticker_daily_value
-	err := json.Unmarshal([]byte(w.Body.String()), &response)
+	err := json.Unmarshal(w.Body.Bytes(), &response)
 	// Grab the value & whether or not it exists
 
 	assert.True(t,len(response) == 90)
